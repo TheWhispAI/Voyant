@@ -1,0 +1,2 @@
+User Authentication: Secure methods for the AI to access user accounts while ensuring user data privacy. This might involve token-based systems or zero-knowledge proofs.
+Anti-bot Evasion: Techniques to ensure the AI's actions are indistinguishable from human behavior to bypass CAPTCHAs or bot detection algorithms.
