@@ -1,7 +1,7 @@
 # Voyant
 Project Voyant aims to develop AI agents, or "Navigators," designed specifically to interact with the web in a human-like manner. These navigators would not just interpret data or provide information; they would physically interact with web interfaces, from clicking links to filling out forms or even engaging in online transactions.
 
-![V](https://github.com/user-attachments/assets/4ff6190f-25c5-4470-835a-f78908d93891)
+![VoyantPost](https://github.com/user-attachments/assets/ff56c7d7-b444-4653-93fd-800540067dc4)
 
 # Key Components 
 
