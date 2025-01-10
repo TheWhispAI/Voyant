@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import numpy as np
 
-class Voyant:
+class Whisp:
     def __init__(self, user_preferences: Dict[str, Any]):
         self.driver = webdriver.Chrome()
         self.wait = WebDriverWait(self.driver, 10)
