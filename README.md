@@ -1,7 +1,5 @@
-# Voyant
-Project Voyant aims to develop AI agents, or "Navigators," designed specifically to interact with the web in a human-like manner. These navigators would not just interpret data or provide information; they would physically interact with web interfaces, from clicking links to filling out forms or even engaging in online transactions.
-
-![VoyantPost](https://github.com/user-attachments/assets/ff56c7d7-b444-4653-93fd-800540067dc4)
+# The Whisp
+The Whisp aims to develop AI agents, or "Navigators," designed specifically to interact with the web in a human-like manner. These navigators would not just interpret data or provide information; they would physically interact with web interfaces, from clicking links to filling out forms or even engaging in online transactions.
 
 # Key Components 
 
@@ -71,6 +69,6 @@ Systems for users to provide feedback on AI performance, which would feed back i
 
 # Vision:
 
-Project Voyant could evolve into a suite of tools where AI navigators are as common as web browsers today, fundamentally altering how we interact with the internet by making it more proactive and personalized. 
+The Whisp could evolve into a suite of tools where AI navigators are as common as web browsers today, fundamentally altering how we interact with the internet by making it more proactive and personalized. 
 This could lead to a new era of digital assistants where the line between human and AI interaction online becomes increasingly blurred, pushing for new norms in digital ethics, privacy, and cybersecurity.
 
