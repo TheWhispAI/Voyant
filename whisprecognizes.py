@@ -11,7 +11,7 @@ import torch
 import torchvision.transforms as transforms
 from torchvision.models import resnet18
 
-class Voyant:
+class Whisp:
     def __init__(self):
         # NLP Model
         self.tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
