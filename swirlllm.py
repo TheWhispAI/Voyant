@@ -4,7 +4,7 @@ from selenium import webdriver  # For web interaction
 import numpy as np
 from transformers import AutoModel, AutoTokenizer
 
-class Voyant:
+class Swirl:
     def __init__(self):
         # Load pre-trained model (using Hugging Face's transformer models as an example)
         self.tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
