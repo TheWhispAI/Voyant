@@ -1,7 +1,7 @@
 # swirl | swirlcorp.xyz | $swirl
 Swirl aims to develop AI agents, or "swirls," designed specifically to interact with the web in a human-like manner. These navigators would not just interpret data or provide information; they would physically interact with web interfaces, from clicking links to filling out forms or even engaging in online transactions.
 
-![swirl corporation](https://github.com/user-attachments/assets/b4b947d7-bf71-4929-ae76-e679d14d2afd)
+![swirl corporation (1)](https://github.com/user-attachments/assets/f3a76fdd-ea98-43b8-ab92-139b64e1aba5)
 
 # Key Components 
 
