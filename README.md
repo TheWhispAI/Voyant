@@ -1,4 +1,4 @@
-# The Whisp
+# Swirl 
 The Whisp aims to develop AI agents, or "Whisps," designed specifically to interact with the web in a human-like manner. These navigators would not just interpret data or provide information; they would physically interact with web interfaces, from clicking links to filling out forms or even engaging in online transactions.
 
 # Key Components 
@@ -57,6 +57,6 @@ Systems for users to provide feedback on AI performance, which would feed back i
 
 # Vision:
 
-The Whisp could evolve into a suite of tools where AI navigators are as common as web browsers today, fundamentally altering how we interact with the internet by making it more proactive and personalized. 
+Swirl could evolve into a suite of tools where AI navigators are as common as web browsers today, fundamentally altering how we interact with the internet by making it more proactive and personalized. 
 This could lead to a new era of digital assistants where the line between human and AI interaction online becomes increasingly blurred, pushing for new norms in digital ethics, privacy, and cybersecurity.
 
