@@ -11,7 +11,7 @@ import torch
 import torchvision.transforms as transforms
 from torchvision.models import resnet18
 
-class Whisp:
+class Swirl:
     def __init__(self):
         self.tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
         self.nlp_model = AutoModel.from_pretrained("bert-base-uncased")
