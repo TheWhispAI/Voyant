@@ -13,16 +13,13 @@ from torchvision.models import resnet18
 
 class Whisp:
     def __init__(self):
-        # NLP Model
         self.tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
         self.nlp_model = AutoModel.from_pretrained("bert-base-uncased")
         
-        # CV Model for UI recognition
         self.cv_model = resnet18(pretrained=True)
-        self.cv_model.fc = torch.nn.Linear(512, 100)  # Example: 100 different UI elements
+        self.cv_model.fc = torch.nn.Linear(512, 100) 
         self.cv_model.eval()
         
-        # Web driver for browser automation
         self.driver = webdriver.Chrome()
         self.wait = WebDriverWait(self.driver, 10)
 
@@ -32,7 +29,6 @@ class Whisp:
         """
         inputs = self.tokenizer(text, return_tensors="pt")
         outputs = self.nlp_model(**inputs)
-        # Here, you would interpret the model outputs for context and intent
         return {
             'context': "UI Interaction",
             'intent': "Find and click login button",
@@ -55,14 +51,12 @@ class Whisp:
         with torch.no_grad():
             features = self.cv_model(image_tensor)
         
-        # Here, you would map features to UI elements, this is a placeholder
         return [{'type': 'button', 'text': 'Login', 'bounds': [10, 10, 50, 30]}]
 
     def interpret_ui(self, elements: List[Dict[str, Any]]) -> Dict[str, Any]:
         """
         Interpret UI design based on detected elements.
         """
-        # Simplified interpretation, in real scenarios, this would be more complex
         ui_interpretation = {
             'layout_type': 'form',
             'interactive_elements': [elem for elem in elements if elem['type'] == 'button']
@@ -103,25 +97,21 @@ class Whisp:
         elements = self.screenshot_to_elements(screenshot_path)
         ui_design = self.interpret_ui(elements)
         
-        # Pretend we took another screenshot after some action
         self.driver.save_screenshot("after_action.png")
         new_elements = self.screenshot_to_elements("after_action.png")
         dynamic_changes = self.detect_dynamic_changes(elements, new_elements)
 
-        # Example action based on understanding
         if context['intent'] == "Find and click login button":
             for elem in ui_design['interactive_elements']:
                 if elem['text'] == 'Login':
                     self.perform_action({'type': 'click', 'text': 'Login'})
                     break
-        
-        # Handle dynamic changes if necessary
+
         if dynamic_changes:
             print(f"Detected dynamic changes: {dynamic_changes}")
 
         print("Task execution completed.")
         self.driver.quit()
 
-# Example usage
-voyant = Voyant()
-voyant.execute_task("Find and click the login button on the page")
+swirl = Swirl()
+swirl.execute_task("Find and click the login button on the page")
