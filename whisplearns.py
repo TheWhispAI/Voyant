@@ -10,7 +10,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split
 import joblib
 
-class Whisp:
+class Swirl:
     def __init__(self):
         self.driver = webdriver.Chrome()
         self.wait = WebDriverWait(self.driver, 10)
@@ -25,7 +25,6 @@ class Whisp:
         try:
             self.model = joblib.load('voyant_model.joblib')
         except FileNotFoundError:
-            # If no model exists, initialize one
             self.model = RandomForestRegressor()
             print("No model found. Initialized a new model.")
 
@@ -45,9 +44,7 @@ class Whisp:
         """
         Prepare interaction data for machine learning.
         """
-        # Convert list of dicts to DataFrame for easier manipulation
         df = pd.DataFrame(self.interaction_log)
-        # Here you would typically preprocess data, encode categorical variables, etc.
         return df
 
     def train_model(self):
@@ -63,18 +60,14 @@ class Whisp:
             print("No outcome data to train on.")
             return
 
-        # Assuming 'outcome' is the target variable, and all other columns are features
         features = df.drop(columns=['outcome'])
-        X = features.select_dtypes(include=[np.number]).values  # Only numeric features for simplicity
+        X = features.select_dtypes(include=[np.number]).values 
         y = df['outcome'].values
 
-        # Split dataset into training set and test set
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
         
-        # Train the model
         self.model.fit(X_train, y_train)
         
-        # Here you could add model evaluation or cross-validation
         self.save_model()
 
     def predict_action(self, current_state: Dict[str, Any]) -> str:
@@ -83,13 +76,11 @@ class Whisp:
         """
         if self.model is None:
             print("Model not trained or loaded. Using default action.")
-            return "Default Action"  # Fallback action
+            return "Default Action"  
 
-        # Convert current state to a format matching training data
         features = pd.DataFrame([current_state]).select_dtypes(include=[np.number]).values
         prediction = self.model.predict(features)
         
-        # Here, you'd map the numerical prediction to an action. This is just an example:
         action_map = {0: "Click Button", 1: "Fill Form", 2: "Navigate"}
         return action_map.get(int(prediction[0]), "Unknown Action")
 
@@ -98,7 +89,6 @@ class Whisp:
         Perform the predicted action on the website.
         """
         if action == "Click Button":
-            # Example action
             self.driver.find_element(By.ID, "submit").click()
         elif action == "Fill Form":
             self.driver.find_element(By.ID, "name").send_keys("John Doe")
@@ -113,25 +103,21 @@ class Whisp:
         """
         self.driver.get("example.com")
         
-        # Simulate some interactions
-        for _ in range(5):  # Simulating 5 interactions for training data
+        for _ in range(5): 
             current_state = {
                 'page_load_time': np.random.uniform(1, 5),
                 'button_clicks': np.random.randint(0, 3),
                 'form_fields_filled': np.random.randint(0, 5),
-                'outcome': np.random.uniform(0, 1)  # 0 to 1 as a proxy for success rate
+                'outcome': np.random.uniform(0, 1) 
             }
             self.log_interaction(current_state)
             
-            # Predict action based on current state
             action = self.predict_action(current_state)
             self.perform_action(action)
-            time.sleep(2)  # Simulate time passing
+            time.sleep(2) 
 
-        # After some interactions, train the model
         self.train_model()
         
-        # Now, for the actual task, use the trained model
         final_state = {
             'page_load_time': 3,
             'button_clicks': 1,
@@ -143,6 +129,5 @@ class Whisp:
         print("Task execution completed with learning from past interactions.")
         self.driver.quit()
 
-# Example usage
-voyant = Voyant()
-voyant.execute_task("Complete a form on the website")
+swirl = Swirl()
+swirl.execute_task("Complete a form on the website")
